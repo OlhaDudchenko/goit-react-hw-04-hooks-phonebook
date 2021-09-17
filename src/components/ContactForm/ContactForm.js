@@ -26,9 +26,7 @@ export function ContactForm({ onSubmit }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     const newContact = { id: uuidv4(), name, number };
-
     onSubmit(newContact);
     reset();
   };

@@ -10,15 +10,14 @@ export function App() {
   const [filter, setFilter] = useState("");
 
   useEffect(() => {
-    const contacts = localStorage.getItem("contacts");
+    const contactsLocal = localStorage.getItem("contactsLocal");
+    const parsedContacts = JSON.parse(contactsLocal);
 
-    const parsedContacts = JSON.parse(contacts);
-
-    setContacts(parsedContacts);
+    setContacts(parsedContacts ?? contactsList);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("contacts", JSON.stringify(contacts));
+    localStorage.setItem("contactsLocal", JSON.stringify(contacts));
   }, [contacts]);
 
   const addContact = (newContact) => {

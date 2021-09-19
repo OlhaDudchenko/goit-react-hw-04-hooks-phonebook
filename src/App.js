@@ -3,7 +3,9 @@ import { Section } from "./components/Section";
 import { ContactForm } from "./components/ContactForm";
 import { ContactList } from "./components/ContactList";
 import { Filter } from "./components/Filter";
+import { DropDown } from "./components/DropDownMenu/DropDownMenu";
 import { contactsList } from "./services/contacts";
+import { AppWrapper } from "./App.styled";
 
 export function App() {
   const [contacts, setContacts] = useState(contactsList);
@@ -48,7 +50,7 @@ export function App() {
     );
   };
   return (
-    <div>
+    <AppWrapper>
       <Section title="Phonebook">
         <ContactForm onSubmit={addContact} />
       </Section>
@@ -60,6 +62,7 @@ export function App() {
           onDeleteContact={deleteContact}
         />
       </Section>
-    </div>
+      <DropDown />
+    </AppWrapper>
   );
 }

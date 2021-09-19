@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { ThemeProvider } from "@emotion/react";
-import { theme } from "./utils/theme";
+
 import "./index.css";
 import { App } from "./App";
+import { ThemeProvider } from "./context/theme";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
+    <ThemeProvider>
       <App />
     </ThemeProvider>
   </React.StrictMode>,
